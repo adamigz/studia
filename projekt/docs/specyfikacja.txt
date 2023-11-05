@@ -1,0 +1,3 @@
+To jest przykładowy projekt z kolokwium. 
+Program wyświetla napis Witaj, świecie!
+Projekt ten został wykonany w języku C.
