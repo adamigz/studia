@@ -60,7 +60,35 @@ void addToArray(int * array) {
 }
 
 void removeFromArray(int * array) {
+    int index;
+    printf("Podaj index elementu do usunięcia: ");
+    scanf("%d", &index);
+    if (index < 0 || index >= n)
+    {
+        printTable("Taki index jest niepoprawny. Sprobuj jeszcze raz");
+        removeFromArray(array);
+    }
+    *(array+index) = 0;
+    while (index<n)
+    {
+        *(array+index) = *(array+index+1);
+        index++;
+    }
+    n -= 1;
+    printTable("Element został usunięty");
+}
 
+void getSumOfArray(int * array) {
+    int sum = 0;
+    int i = 0;
+    while (i<n)
+    {
+        sum += *(array+i);
+        i++;
+    }
+    char text[38];
+    sprintf(text, "Suma elementow tej tablicy wynosi %d", sum);
+    printTable(text);
 }
 
 int main() {
@@ -95,7 +123,7 @@ int main() {
             removeFromArray(&arr);
             break;
         case 4:
-
+            getSumOfArray(&arr);
             break;
         case 5: 
 
