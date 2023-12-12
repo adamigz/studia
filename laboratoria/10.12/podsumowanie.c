@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 int n = 0;
 
@@ -91,6 +92,49 @@ void getSumOfArray(int * array) {
     printTable(text);
 }
 
+void calcTreeDepth(int n, int * d) {
+    int i = 0;
+    while(n>pow(2, i)) {
+        i++;
+    }
+    *d = i;
+}
+
+void printTreeRow(int * array, int elements, int buffer) {
+    if(buffer>0) {
+        int i=0;
+        while(i<buffer) {
+            printf(" ");
+            i++;
+        }
+        int i = 0;
+        while (i<elements) {
+            printf("%d ", *(array+i));
+            i++;
+        }
+        printf("\n");
+    } else {
+        int i=0;
+        int i = 0;
+        while (i<elements) {
+            printf("%d ", *(array+i));
+            i++;
+        }
+        printf("\n");
+    }
+}
+
+void printBinaryTree(int * array) {
+    int d;
+    calcTreeDepth(n, &d);
+    int w = pow(2, d-1)/2;
+    int i = 0;
+    while (i<d) {
+        printTreeRow(array+(int)pow(2, i)-1, pow(2, i), w-(pow(2, i)*2)-1);
+        i++;
+    }
+}
+
 int main() {
     int arr[100];
 
@@ -126,7 +170,7 @@ int main() {
             getSumOfArray(&arr);
             break;
         case 5: 
-
+            printBinaryTree(&arr);
             break;
         default:
             printTable("Wybrano niepoprawną opcję. Wybierz jeszcze raz");        
