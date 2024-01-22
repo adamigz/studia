@@ -92,7 +92,7 @@ void getSumOfArray(int * array) {
     printTable(text);
 }
 
-void calcTreeDepth(int n, int * d) {
+void calcTreeDepth(int * d) {
     int i = 0;
     while(n>pow(2, i)) {
         i++;
@@ -101,6 +101,7 @@ void calcTreeDepth(int n, int * d) {
 }
 
 void printTreeRow(int * array, int elements, int buffer) {
+    printf("row");
     if(buffer>0) {
         int i=0;
         while(i<buffer) {
@@ -126,7 +127,7 @@ void printTreeRow(int * array, int elements, int buffer) {
 
 void printBinaryTree(int * array) {
     int d;
-    calcTreeDepth(n, &d);
+    calcTreeDepth(&d);
     int w = pow(2, d-1)/2;
     int i = 0;
     while (i<d) {
