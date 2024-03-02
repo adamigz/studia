@@ -1,1 +1,1 @@
-# studia
+# STUDIA
