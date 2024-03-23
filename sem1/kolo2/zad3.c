@@ -20,24 +20,24 @@ int main() {
         //o
         for (int i=0;i<abs(middle-y);i++)
         {
-            printf("o");
+            printf(".");
         }
         //wzor
         for (int i = 0; i < n-abs(((middle-y)*2)); i++)
         {
             if (i%2==0)
             {
-                printf("x");
+                printf("X");
             }
             else
             {
-                printf("o");
+                printf(".");
             }
         }
         //o
         for (int i=0;i<abs(middle-y);i++)
         {
-            printf("o");
+            printf(".");
         }
         printf("\n");
     }
